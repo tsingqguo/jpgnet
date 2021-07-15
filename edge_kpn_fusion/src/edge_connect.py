@@ -11,7 +11,7 @@ from skimage.metrics import structural_similarity as compare_ssim
 from skimage.metrics import peak_signal_noise_ratio as compare_psnr
 import kpn.utils as kpn_utils
 from kpn.config import get_opt
-from kpn.validation import npk_val, get_uncertainty
+from kpn.validation import npk_val, get_uncertainty, get_uncertainty_2
 from different import get_different
 import torch.nn.functional as F
 import lpips
@@ -512,7 +512,8 @@ class EdgeConnect():
                 uncertainty_map = core.detach()
 
                 # kpn2
-                input2 = torch.cat((res1, res2, uncertainty_map, masks), dim=1)
+                uMap = get_uncertainty(uncertainty_map, images.size(0))
+                input2 = torch.cat((res1, res2, uncertainty_map, uMap), dim=1)
                 input2_ = torch.cat((res1, res2), dim=1)
                 kpn_out2, _ = generator2(input2, input2_)
 
@@ -575,7 +576,8 @@ class EdgeConnect():
                 uncertainty_map = core.detach()
 
                 # kpn2
-                input2 = torch.cat((res1, res2, uncertainty_map, masks), dim=1)
+                uMap = get_uncertainty(uncertainty_map, images.size(0))
+                input2 = torch.cat((res1, res2, uncertainty_map, uMap), dim=1)
                 input2_ = torch.cat((res1, res2), dim=1)
                 kpn_out2, _ = generator2(input2, input2_)
                 kpn_out2_merged = (kpn_out2 * masks) + (images * (1 - masks))
@@ -613,7 +615,7 @@ class EdgeConnect():
 
     def fusion_test(self):
         opt = get_opt()
-        generator1 = kpn_utils_15.create_generator(opt)
+        generator1 = kpn_utils.create_generator(opt, 1, opt.kpn1_model)
         generator2 = kpn_utils.create_generator(opt, 2, opt.kpn2_model)
 
         transf = torchvision.transforms.Compose(
@@ -687,9 +689,12 @@ class EdgeConnect():
                     edge_l1_loss = torch.nn.functional.l1_loss(res1, images, reduction='mean').item()
                     edge_l1_list.append(edge_l1_loss)
 
-                    #0.09068728238344193
-                    edge_pl = loss_fn_vgg(transf(res1[0].cpu()).cuda(), transf(images[0].cpu()).cuda()).item()
-                    edge_lpips_list.append(edge_pl)
+                    if torch.cuda.is_available():
+                        edge_pl = loss_fn_vgg(transf(res1[0].cpu()).cuda(), transf(images[0].cpu()).cuda()).item()
+                        edge_lpips_list.append(edge_pl)
+                    else:
+                        edge_pl = loss_fn_vgg(transf(res1[0].cpu()), transf(images[0].cpu())).item()
+                        edge_lpips_list.append(edge_pl)
 
 
 
@@ -704,7 +709,8 @@ class EdgeConnect():
                     uncertainty_map = core.detach()
 
                     # smart fusion
-                    input2 = torch.cat((res1, res2, uncertainty_map, masks), dim=1)
+                    uMap = get_uncertainty(uncertainty_map, images.size(0))
+                    input2 = torch.cat((res1, res2, uncertainty_map, uMap), dim=1)
                     input2_ = torch.cat((res1, res2), dim=1)
                     t = time.time()
                     kpn_out2, _ = generator2(input2, input2_)
@@ -714,9 +720,12 @@ class EdgeConnect():
                     l1_loss = torch.nn.functional.l1_loss(kpn_out2_merged, images, reduction='mean').item()
                     l1_list.append(l1_loss)
 
-                    pl = loss_fn_vgg(transf(kpn_out2_merged[0].cpu()).cuda(), transf(images[0].cpu()).cuda()).item()
-                    lpips_list.append(pl)
-
+                    if torch.cuda.is_available():
+                        pl = loss_fn_vgg(transf(kpn_out2_merged[0].cpu()).cuda(), transf(images[0].cpu()).cuda()).item()
+                        lpips_list.append(pl)
+                    else:
+                        pl = loss_fn_vgg(transf(kpn_out2_merged[0].cpu()), transf(images[0].cpu())).item()
+                        lpips_list.append(pl)
 
                     img_pred = kpn_utils.recover_process(kpn_out2_merged, height=-1, width=-1)
                     img_gt = kpn_utils.recover_process(images, height=-1, width=-1)
@@ -729,9 +738,8 @@ class EdgeConnect():
 
 
                     # binary fusion--------------------
-
-                    uncertainty = get_uncertainty(core, masks)
-                    uncertainty = torch.from_numpy(uncertainty).float()
+                    uncertainty = get_uncertainty_2(core, images.size(0))
+                    # uncertainty = torch.from_numpy(uncertainty).float()
                     if torch.cuda.is_available():
                         uncertainty = uncertainty.cuda()
 

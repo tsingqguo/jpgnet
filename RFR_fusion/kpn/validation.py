@@ -82,7 +82,6 @@ def get_uncertainty(core, bsize):
 
 
 
-
 def npk_val(pre, gt):
     img_pred_recover = utils.recover_process(pre, height=-1, width=-1)
     img_gt_recover = utils.recover_process(gt, height=-1, width=-1)
