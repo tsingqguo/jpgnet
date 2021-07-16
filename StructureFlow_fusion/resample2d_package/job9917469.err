@@ -1,0 +1,7 @@
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+In file included from resample2d_cuda.cc:2:0:
+/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include/torch/csrc/api/include/torch/torch.h:7:2: warning: #warning "Including torch/torch.h for C++ extensions is deprecated. Please include torch/extension.h" [-Wcpp]
+ #warning \
+  ^~~~~~~
+zip_safe flag not set; analyzing archive contents...
+__pycache__.resample2d_cuda.cpython-37: module references __file__

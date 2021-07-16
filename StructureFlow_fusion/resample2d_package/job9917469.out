@@ -1,0 +1,43 @@
+running install
+running bdist_egg
+running egg_info
+creating resample2d_cuda.egg-info
+writing resample2d_cuda.egg-info/PKG-INFO
+writing dependency_links to resample2d_cuda.egg-info/dependency_links.txt
+writing top-level names to resample2d_cuda.egg-info/top_level.txt
+writing manifest file 'resample2d_cuda.egg-info/SOURCES.txt'
+reading manifest file 'resample2d_cuda.egg-info/SOURCES.txt'
+writing manifest file 'resample2d_cuda.egg-info/SOURCES.txt'
+installing library code to build/bdist.linux-x86_64/egg
+running install_lib
+running build_ext
+building 'resample2d_cuda' extension
+creating build
+creating build/temp.linux-x86_64-3.7
+gcc -pthread -B /home/xl22/.conda/envs/torch1_0/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include/torch/csrc/api/include -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include/TH -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include/THC -I/share/apps/gcc/4.8.5/cuda/10.0/include -I/home/xl22/.conda/envs/torch1_0/include/python3.7m -c resample2d_cuda.cc -o build/temp.linux-x86_64-3.7/resample2d_cuda.o -std=c++11 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=resample2d_cuda -D_GLIBCXX_USE_CXX11_ABI=0
+/share/apps/gcc/4.8.5/cuda/10.0/bin/nvcc -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include/torch/csrc/api/include -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include/TH -I/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/torch/lib/include/THC -I/share/apps/gcc/4.8.5/cuda/10.0/include -I/home/xl22/.conda/envs/torch1_0/include/python3.7m -c resample2d_kernel.cu -o build/temp.linux-x86_64-3.7/resample2d_kernel.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --compiler-options '-fPIC' -gencode arch=compute_60,code=sm_60 -gencode arch=compute_61,code=sm_61 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=resample2d_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -std=c++11
+creating build/lib.linux-x86_64-3.7
+g++ -pthread -shared -B /home/xl22/.conda/envs/torch1_0/compiler_compat -L/home/xl22/.conda/envs/torch1_0/lib -Wl,-rpath=/home/xl22/.conda/envs/torch1_0/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-x86_64-3.7/resample2d_cuda.o build/temp.linux-x86_64-3.7/resample2d_kernel.o -L/share/apps/gcc/4.8.5/cuda/10.0/lib64 -lcudart -o build/lib.linux-x86_64-3.7/resample2d_cuda.cpython-37m-x86_64-linux-gnu.so
+creating build/bdist.linux-x86_64
+creating build/bdist.linux-x86_64/egg
+copying build/lib.linux-x86_64-3.7/resample2d_cuda.cpython-37m-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/egg
+creating stub loader for resample2d_cuda.cpython-37m-x86_64-linux-gnu.so
+byte-compiling build/bdist.linux-x86_64/egg/resample2d_cuda.py to resample2d_cuda.cpython-37.pyc
+creating build/bdist.linux-x86_64/egg/EGG-INFO
+copying resample2d_cuda.egg-info/PKG-INFO -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying resample2d_cuda.egg-info/SOURCES.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying resample2d_cuda.egg-info/dependency_links.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+copying resample2d_cuda.egg-info/top_level.txt -> build/bdist.linux-x86_64/egg/EGG-INFO
+writing build/bdist.linux-x86_64/egg/EGG-INFO/native_libs.txt
+creating dist
+creating 'dist/resample2d_cuda-0.0.0-py3.7-linux-x86_64.egg' and adding 'build/bdist.linux-x86_64/egg' to it
+removing 'build/bdist.linux-x86_64/egg' (and everything under it)
+Processing resample2d_cuda-0.0.0-py3.7-linux-x86_64.egg
+removing '/home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/resample2d_cuda-0.0.0-py3.7-linux-x86_64.egg' (and everything under it)
+creating /home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/resample2d_cuda-0.0.0-py3.7-linux-x86_64.egg
+Extracting resample2d_cuda-0.0.0-py3.7-linux-x86_64.egg to /home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages
+resample2d-cuda 0.0.0 is already the active version in easy-install.pth
+
+Installed /home/xl22/.conda/envs/torch1_0/lib/python3.7/site-packages/resample2d_cuda-0.0.0-py3.7-linux-x86_64.egg
+Processing dependencies for resample2d-cuda==0.0.0
+Finished processing dependencies for resample2d-cuda==0.0.0
