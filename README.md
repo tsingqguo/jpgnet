@@ -3,8 +3,8 @@ We proposed a novel framework for image inpainting. https://arxiv.org/abs/2107.0
 
 
 # Acknowledgments
-Parts of this code were derived from:
+Parts of this code were derived from:<br>
 https://github.com/tsingqguo/efficientderain <br>
 https://github.com/knazeri/edge-connect <br>
-https://github.com/RenYurui/StructureFlow
-https://github.com/jingyuanli001/RFR-Inpainting
+https://github.com/RenYurui/StructureFlow<br>
+https://github.com/jingyuanli001/RFR-Inpainting<br>
