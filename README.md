@@ -15,7 +15,7 @@ We propose a new method for image inpainting by formulating it as a mix of two p
 ```shell
 --CelebA
    --train
-	  --1-1.png
+      --1-1.png
    --valid
       --1-1.png
    --test
