@@ -77,7 +77,7 @@ For the parameters: checkpoints/config.yml, kpn/config.py
 }
 ```
 
-# Acknowledgments
+## Acknowledgments
 Parts of this code were derived from:<br>
 https://github.com/tsingqguo/efficientderain <br>
 https://github.com/knazeri/edge-connect <br>
