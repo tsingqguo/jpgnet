@@ -1,5 +1,30 @@
-# jpgnet
+# JPGNet: Joint Predictive Filtering and Generative Network
+for Image Inpainting
 We proposed a novel framework for image inpainting. https://arxiv.org/abs/2107.04281
+
+
+# Dataset
+
+
+# Pretrained models
+
+
+# Train
+
+
+# Test
+
+
+# Evaluation
+
+
+# Results
+
+
+
+# Bibtex
+
+
 
 
 # Acknowledgments
