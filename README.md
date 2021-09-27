@@ -46,28 +46,21 @@ pretrained model (Dunhuang) at [models](https://drive.google.com/)
 
 ## Train
 
-python train.py
+python train.py 
+<br>
 For the parameters: checkpoints/config.yml, kpn/config.py
 
 ## Test
 
 python test.py
+<br>
 For the parameters: checkpoints/config.yml, kpn/config.py
 
 ## Results
 
 - Comparsion with SOTA, see paper for details.
 
-![Framework](./images/vis_compare.png)
-
-
-- Penumbra comparsion between ours and SP+M Net
-
-![Framework](./images/edge_comparsion.png)
-
-- Testing result
-
-
+![Framework](./images/example1.png)
 
 
 **More details are coming soon**
