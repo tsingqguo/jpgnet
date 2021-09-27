@@ -26,11 +26,11 @@ We propose a new method for image inpainting by formulating it as a mix of two p
       --1-1.png
    --mask-test
       --0%-20%
-		--1-1.png
+        --1-1.png
       --20%-40%
-		--1-1.png
-	  --40%-60%
-		--1-1.png
+        --1-1.png
+      --40%-60%
+        --1-1.png
  ```
  
  2. Run the code  `./data/data_list.py` to generate the data list
