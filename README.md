@@ -38,11 +38,11 @@ We propose a new method for image inpainting by formulating it as a mix of two p
 
 ## Pretrained models
 
-We release our pretrained model (CelebA) at [models](https://drive.google.com/)
+We release our pretrained model (CelebA) at [models](https://drive.google.com/drive/folders/1Bd6-J4IkB2BvRu1VlcwRYqrzebdd6MZc?usp=sharing)
 
-pretrained model (Places2) at [models](https://drive.google.com/)
+pretrained model (Places2) at [models](https://drive.google.com/drive/folders/1U6tSwMh2J_Tr_vR9BKMvCkEf0SITx1JE?usp=sharing)
 
-pretrained model (Dunhuang) at [models](https://drive.google.com/)
+pretrained model (Dunhuang) at [models](https://drive.google.com/drive/folders/1DaPOfLNscra1mOwdUEUNIYbMqcoz4RRZ?usp=sharing)
 
 ## Train
 
