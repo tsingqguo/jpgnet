@@ -71,8 +71,7 @@ For the parameters: checkpoints/config.yml, kpn/config.py
 @article{guo2021jpgnet,
   title={JPGNet: Joint Predictive Filtering and Generative Network for Image Inpainting},
   author={Guo, Qing and Li, Xiaoguang and Juefei-Xu, Felix and Yu, Hongkai and Liu, Yang and others},
-  journal={arXiv e-prints},
-  pages={arXiv--2107},
+  journal={ACM-MM},
   year={2021}
 }
 ```
