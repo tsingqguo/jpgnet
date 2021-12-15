@@ -1,5 +1,5 @@
 # JPGNet: Joint Predictive Filtering and Generative Network for Image Inpainting
-We propose a new method for image inpainting by formulating it as a mix of two problems that predictive filtering and deep generation. Please refer to the paper for details: https://arxiv.org/pdf/2107.04281.pdf
+We propose a new method for image inpainting by formulating it as a mix of two problems that predictive filtering and deep generation. This work has been accepted to ACM-MM 2021. Please refer to the paper for details: https://arxiv.org/pdf/2107.04281.pdf
 
 ![Framework](./images/pipline.png)
 
